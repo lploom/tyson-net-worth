@@ -1,0 +1,7 @@
+dburl=jdbc:postgresql://localhost:5432/PT4 DB
+dbuser=postgres
+dbpass=dbpass
+
+player=MikeTyson
+session_start_time=2017-10-21 00:00:00
+currency=USD
