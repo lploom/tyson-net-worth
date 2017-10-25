@@ -1,5 +1,7 @@
 package com.rene;
 
+import javafx.scene.text.FontWeight;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,6 +18,9 @@ public class Conf {
     private String playerName;
     private LocalDateTime sessionStartTime;
     private String currency;
+    private String fontFamily;
+    private FontWeight fontWeight;
+    private double fontSize;
 
     public Conf() {
         Properties prop = new Properties();
@@ -28,6 +33,9 @@ public class Conf {
             playerName = prop.getProperty("player");
             sessionStartTime = LocalDateTime.parse(prop.getProperty("session_start_time"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             currency = prop.getProperty("currency");
+            fontFamily = prop.getProperty("font_family");
+            fontWeight = FontWeight.findByName(prop.getProperty("font_weight"));
+            fontSize = Double.parseDouble(prop.getProperty("font_size"));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -55,5 +63,17 @@ public class Conf {
 
     public String getCurrency() {
         return currency;
+    }
+
+    public FontWeight getFontWeight() {
+        return fontWeight;
+    }
+
+    public String getFontFamily() {
+        return fontFamily;
+    }
+
+    public double getFontSize() {
+        return fontSize;
     }
 }

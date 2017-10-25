@@ -5,3 +5,9 @@ dbpass=dbpass
 player=MikeTyson
 session_start_time=2017-10-21 00:00:00
 currency=USD
+
+#Courier New, Arial, Times New Roman etc (depends on machine)
+font_family=Lucida Console
+#Thin, Extra Light, Light, Normal, Medium, Semi Bold, Bold, Extra Bold, Black
+font_weight=Normal
+font_size=14

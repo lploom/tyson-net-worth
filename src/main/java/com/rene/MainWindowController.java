@@ -3,6 +3,7 @@ package com.rene;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -23,7 +24,9 @@ public class MainWindowController {
     PokerTrackerDAO pokerTrackerDAO = new PokerTrackerDAO();
 
     public void setPrimaryStage(Stage stage) {
-        pokerTrackerDAO.init(new Conf());
+        Conf conf = new Conf();
+        netWonLbl.setFont(Font.font(conf.getFontFamily(), conf.getFontWeight(), conf.getFontSize()));
+        pokerTrackerDAO.init(conf);
         makeMoveable(stage);
         stage.initStyle(StageStyle.UNDECORATED);
         this.primaryStage = stage;
